@@ -100,8 +100,12 @@ Open `http://localhost:8501` in your browser 🎉
 
 ## 📸 Screenshots
 
-> Add your screenshots here after uploading
-
+> <img width="1334" height="957" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/8ff5f897-c0e9-45c6-b502-4e13eca5494f" />
+<img width="1334" height="957" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/8ff5f897-c0e9-45c6-b502-4e13eca5494f" />
+![Uploading Screenshot (117).png…]()
+![Uploading Screenshot (117).png…]()
+<img width="1500" height="948" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/6c328dfc-ac03-48de-be0c-8b5587380b63" />
+<img width="1500" height="948" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/6c328dfc-ac03-48de-be0c-8b5587380b63" />
 ---
 
 ## 🔮 Future Plans
@@ -112,13 +116,9 @@ Open `http://localhost:8501` in your browser 🎉
 
 ---
 
-## 👨‍💻 Developer
-
 Made with ❤️ by **Nirvigna**
 
 ---
 
 ## ⭐ If you liked this project, give it a star on GitHub!
-```
 
----
