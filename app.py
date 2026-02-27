@@ -6,9 +6,7 @@ from groq import Groq
 from dotenv import load_dotenv
 import speech_recognition as sr
 from gtts import gTTS
-import pygame
 import tempfile
-import time
 
 load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
@@ -115,12 +113,9 @@ def speak_text(text, lang_code):
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as f:
             temp_path = f.name
         tts.save(temp_path)
-        pygame.mixer.init()
-        pygame.mixer.music.load(temp_path)
-        pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
-            time.sleep(0.1)
-        pygame.mixer.music.unload()
+        with open(temp_path, "rb") as audio_file:
+            audio_bytes = audio_file.read()
+        st.audio(audio_bytes, format="audio/mp3", autoplay=True)
         os.remove(temp_path)
     except Exception as e:
         st.warning(f"Voice output error: {e}")
@@ -175,8 +170,7 @@ def process_input(user_input, forced_lang=None):
 
     with st.chat_message("assistant"):
         st.write(final_reply)
-        if st.button("🔊 Speak Reply", key=f"speak_{len(st.session_state.messages)}"):
-            speak_text(final_reply, gtts_code)
+        speak_text(final_reply, gtts_code)
 
     st.session_state.messages.append({"role": "user", "content": user_input})
     st.session_state.messages.append({"role": "assistant", "content": final_reply})
