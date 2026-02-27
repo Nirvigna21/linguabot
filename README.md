@@ -79,34 +79,18 @@ Open `http://localhost:8501` in your browser 🎉
 
 ---
 
-## 🌍 Supported Languages
-
-| Language | Code | Voice Input |
-|----------|------|-------------|
-| English | en | ✅ |
-| Hindi | hi | ✅ |
-| Telugu | te | ✅ |
-| Marathi | mr | ✅ |
-| Tamil | ta | ✅ |
-| Spanish | es | ✅ |
-| French | fr | ✅ |
-| German | de | ✅ |
-| Japanese | ja | ✅ |
-| Korean | ko | ✅ |
-| Arabic | ar | ✅ |
-| Russian | ru | ✅ |
-
----
-
+## 📸 Screenshots
 ## 📸 Screenshots
 
-> <img width="1334" height="957" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/8ff5f897-c0e9-45c6-b502-4e13eca5494f" />
-<img width="1334" height="957" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/8ff5f897-c0e9-45c6-b502-4e13eca5494f" />
-![Uploading Screenshot (117).png…]()
-![Uploading Screenshot (117).png…]()
-<img width="1500" height="948" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/6c328dfc-ac03-48de-be0c-8b5587380b63" />
-<img width="1500" height="948" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/6c328dfc-ac03-48de-be0c-8b5587380b63" />
----
+<p align="center">
+  <img src="<img width="1334" height="957" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/600372b6-28a4-40d2-98b5-f81e0463fc1e" />
+" width="900"/>
+</p>
+
+<p align="center">
+  <img src="<img width="1500" height="948" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/bf4ff97d-e837-4cb2-8ac8-9e64bea92296" />
+" width="800"/>
+</p>
 
 ## 🔮 Future Plans
 
