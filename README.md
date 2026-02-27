@@ -80,9 +80,11 @@ Open `http://localhost:8501` in your browser 🎉
 ---
 
 ## 📸 Screenshots
-<img width="1334" height="957" alt="Screenshot (117)" src="https://github.com/user-attachments/assets/190bef46-8f0d-4613-a024-e420998f6cc5" />
-<img width="1500" height="948" alt="Screenshot (119)" src="https://github.com/user-attachments/assets/73e3d672-e6eb-4a2b-8e2d-96dddb06f24e" />
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5900a402-4530-4c3d-a50d-e62f01e3930c" width="400"/>
+  <img src="https://github.com/user-attachments/assets/4c74ab28-c97b-4cd2-bd7b-94d11cde0aa2" width="400"/>
+</p>
 
 ## 🔮 Future Plans
 
