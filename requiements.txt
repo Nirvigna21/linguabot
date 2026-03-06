@@ -3,3 +3,6 @@ langdetect
 deep-translator
 groq
 python-dotenv
+SpeechRecognition
+PyAudio
+gTTS
