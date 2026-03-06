@@ -1,6 +1,6 @@
 import os
-from langdetect import detect
 import streamlit as st
+from langdetect import detect
 
 from deep_translator import GoogleTranslator
 from groq import Groq
