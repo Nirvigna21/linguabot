@@ -95,14 +95,15 @@
 
 /* User message */
 [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-user"]) {
-    background: linear-gradient(135deg, #1C2C50, #162244) !important;
+    background: linear-gradient(135deg, #0a3d62, #1a5276) !important;
     border-color: rgba(59,123,246,0.25) !important;
     border-left: 3px solid #3B7BF6 !important;
 }
 
+
 /* Bot message */
 [data-testid="stChatMessage"]:has([data-testid="chatAvatarIcon-assistant"]) {
-    background: linear-gradient(135deg, #131929, #161F35) !important;
+    background: linear-gradient(135deg, #1a1060, #2d1b69) !important;
     border-color: rgba(167,139,250,0.2) !important;
     border-left: 3px solid #A78BFA !important;
 }
