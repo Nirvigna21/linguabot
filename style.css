@@ -253,6 +253,14 @@ ul[data-baseweb="menu"] li {
 ul[data-baseweb="menu"] li:hover {
     background: #2a3f6f !important;
 }
+/* Output text white */
+[data-testid="stChatMessage"] p {
+    color: #ffffff !important;
+}
+
+[data-testid="stChatMessage"] {
+    color: #ffffff !important;
+}
 
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
