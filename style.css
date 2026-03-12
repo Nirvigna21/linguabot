@@ -115,10 +115,29 @@
 }
 
 .stChatInput textarea {
-    color: #000000 !important;
-    background: #ffffff !important;
+    color: #ffffff !important;
+    background: #1A2235 !important;
+    caret-color: #ffffff !important;
 }
 
+.stChatInput {
+    background-color: #1A2235 !important;
+    border: 1px solid #3B7BF6 !important;
+    border-radius: 14px !important;
+}
+
+[data-testid="stChatInput"] {
+    background-color: #1A2235 !important;
+}
+
+[data-testid="stChatInputContainer"] {
+    background-color: #1A2235 !important;
+}
+
+[data-testid="stChatInputContainer"] textarea {
+    color: #ffffff !important;
+    background-color: #1A2235 !important;
+}
 .stChatInput textarea::placeholder {
     color: #888888 !important;
 }
