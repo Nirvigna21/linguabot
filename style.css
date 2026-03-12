@@ -109,18 +109,18 @@
 
 /* Chat input */
 .stChatInput {
-    background: #1A2235 !important;
+    background: #ffffff !important;
     border: 1px solid #2a3f6f !important;
     border-radius: 14px !important;
 }
 
 .stChatInput textarea {
-    color: #000000  !important;
+    color: #000000 !important;
     background: #ffffff !important;
 }
 
 .stChatInput textarea::placeholder {
-    color: #4A5A7A !important;
+    color: #888888 !important;
 }
 
 /* Buttons */
@@ -222,6 +222,37 @@ hr {
     font-size: 0.72rem;
     font-weight: 600;
     margin-top: 6px;
+}
+
+/* Selectbox */
+.stSelectbox div[data-baseweb="select"] {
+    background: #1A2235 !important;
+    border: 1px solid #2a3f6f !important;
+    border-radius: 10px !important;
+}
+
+.stSelectbox div[data-baseweb="select"] > div {
+    background: #1A2235 !important;
+    color: #E8EEFF !important;
+}
+
+.stSelectbox label {
+    color: #E8EEFF !important;
+    font-size: 0.9rem !important;
+}
+
+ul[data-baseweb="menu"] {
+    background: #1A2235 !important;
+    border: 1px solid #2a3f6f !important;
+}
+
+ul[data-baseweb="menu"] li {
+    background: #1A2235 !important;
+    color: #E8EEFF !important;
+}
+
+ul[data-baseweb="menu"] li:hover {
+    background: #2a3f6f !important;
 }
 
 /* Scrollbar */
