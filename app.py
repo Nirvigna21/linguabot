@@ -1,15 +1,9 @@
 import os
 import streamlit as st
 from langdetect import detect
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 2aea71ef899945f730153fcb1ab945ed70315589
 from deep_translator import GoogleTranslator
 from groq import Groq
 from dotenv import load_dotenv
-import speech_recognition as sr
 from gtts import gTTS
 import tempfile
 
@@ -31,21 +25,6 @@ lang_map = {
     "ta": ("🇮🇳", "Tamil", "ta"),
 }
 
-voice_lang_options = {
-    "Auto (English)": "en-US",
-    "Hindi": "hi-IN",
-    "Telugu": "te-IN",
-    "Marathi": "mr-IN",
-    "Tamil": "ta-IN",
-    "Spanish": "es-ES",
-    "French": "fr-FR",
-    "German": "de-DE",
-    "Japanese": "ja-JP",
-    "Korean": "ko-KR",
-    "Arabic": "ar-SA",
-    "Russian": "ru-RU",
-}
-
 def load_css(file_name):
     with open(file_name) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
@@ -57,7 +36,7 @@ st.set_page_config(page_title="LinguaBot", page_icon="🌐", layout="centered")
 st.markdown("""
 <div class="title-banner">
     <h1>🌐 LinguaBot</h1>
-    <p>Speak or type in any language — I detect, understand & reply in yours</p>
+    <p>Type in any language — I detect, understand & reply in yours</p>
     <div class="status-row">
         <span class="status-chip">● Live</span>
         <span class="status-chip blue">🤖 LLaMA 3.3 70B</span>
@@ -91,27 +70,6 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-def record_voice(lang_code="en-US"):
-    r = sr.Recognizer()
-    with sr.Microphone() as source:
-        r.adjust_for_ambient_noise(source, duration=1)
-        try:
-            audio = r.listen(source, timeout=8, phrase_time_limit=10)
-            text = r.recognize_google(audio, language=lang_code)
-            if text:
-                base_lang = lang_code.split("-")[0]
-                try:
-                    if base_lang != "en":
-                        proper_text = GoogleTranslator(source="en", target=base_lang).translate(text)
-                    else:
-                        proper_text = text
-                except:
-                    proper_text = text
-                return proper_text, base_lang
-            return None, None
-        except:
-            return None, None
-
 def speak_text(text, lang_code):
     try:
         tts = gTTS(text=text, lang=lang_code, slow=False)
@@ -125,22 +83,18 @@ def speak_text(text, lang_code):
     except Exception as e:
         st.warning(f"Voice output error: {e}")
 
-def process_input(user_input, forced_lang=None):
+def process_input(user_input):
     try:
-        if forced_lang and forced_lang != "en":
-            detected_lang = forced_lang
-        elif len(user_input.strip()) < 5:
+        if len(user_input.strip()) < 5:
             detected_lang = "en"
         else:
             try:
                 detected_lang = detect(user_input)
                 valid_langs = list(lang_map.keys())
-                if detected_lang not in valid_langs and forced_lang:
-                    detected_lang = forced_lang
-                elif detected_lang not in valid_langs:
+                if detected_lang not in valid_langs:
                     detected_lang = "en"
             except:
-                detected_lang = forced_lang if forced_lang else "en"
+                detected_lang = "en"
     except:
         detected_lang = "en"
 
@@ -191,30 +145,7 @@ for i, msg in enumerate(st.session_state.messages):
 
 st.divider()
 
-selected_voice_lang = st.selectbox(
-    "🎤 Select your speaking language before clicking Speak:",
-    options=list(voice_lang_options.keys()),
-    index=0
-)
-
-col1, col2 = st.columns([5, 1])
-
-with col2:
-    voice_clicked = st.button("🎤 Speak", use_container_width=True)
-
-with col1:
-    user_input = st.chat_input("💬 Type in any language — Hindi, Telugu, Marathi, Spanish...")
-
-if voice_clicked:
-    selected_code = voice_lang_options[selected_voice_lang]
-    with st.spinner("🎤 Listening... Speak now!"):
-        spoken_text, spoken_lang = record_voice(lang_code=selected_code)
-    if spoken_text:
-        st.success(f"🎙️ You said: **{spoken_text}**")
-        process_input(spoken_text, forced_lang=spoken_lang)
-    else:
-        st.error("❌ Couldn't hear anything. Try again!")
+user_input = st.chat_input("💬 Type in any language — Hindi, Telugu, Marathi, Spanish...")
 
 if user_input:
     process_input(user_input)
-
