@@ -1,7 +1,7 @@
-streamlit
 langdetect
 deep-translator
 groq
 python-dotenv
 gTTS
 SpeechRecognition
+streamlit
