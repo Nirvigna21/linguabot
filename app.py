@@ -83,10 +83,12 @@ def speak_text(text, lang_code):
     except Exception as e:
         st.warning(f"Voice output error: {e}")
 
-def process_input(user_input):
+def process_input(user_input, forced_lang=None):
     try:
-        if len(user_input.strip()) < 5:
-            detected_lang = "en"
+        if forced_lang:
+            detected_lang =forced_lang
+        elif len(user_input.strip()) < 5:
+            detected_lang="en"
         else:
             try:
                 detected_lang = detect(user_input)
@@ -145,7 +147,24 @@ for i, msg in enumerate(st.session_state.messages):
 
 st.divider()
 
-user_input = st.chat_input("💬 Type in any language — Hindi, Telugu, Marathi, Spanish...")
+selected_lang = st.selectbox(
+    "🌍 Select reply language:",
+    options=["Auto Detect", "Hindi", "Telugu", "Marathi", "Tamil",
+             "Spanish", "French", "German", "Japanese", "Korean",
+             "Arabic", "Russian", "English"],
+    index=0
+)
+
+lang_name_to_code = {
+    "Auto Detect": None,
+    "Hindi": "hi", "Telugu": "te", "Marathi": "mr",
+    "Tamil": "ta", "Spanish": "es", "French": "fr",
+    "German": "de", "Japanese": "ja", "Korean": "ko",
+    "Arabic": "ar", "Russian": "ru", "English": "en"
+}
+
+user_input = st.chat_input("💬 Type anything in English or your language...")
 
 if user_input:
-    process_input(user_input)
+    forced = lang_name_to_code[selected_lang]
+    process_input(user_input, forced_lang=forced)
