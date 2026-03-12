@@ -2,7 +2,10 @@ import os
 import streamlit as st
 from langdetect import detect
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2aea71ef899945f730153fcb1ab945ed70315589
 from deep_translator import GoogleTranslator
 from groq import Groq
 from dotenv import load_dotenv
