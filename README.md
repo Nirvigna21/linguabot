@@ -1,4 +1,5 @@
 # 🌐 LinguaBot — Multi-Language Translator Chatbot
+🚀 Live Demo: https://linguabot-xrkdqzm2yek4nkeig3dwrd.streamlit.app/
 
 A smart AI-powered chatbot that detects your language automatically and responds in the same language. Type or speak in Hindi, Telugu, Marathi, Spanish, French and more — LinguaBot understands and replies in your language!
 
